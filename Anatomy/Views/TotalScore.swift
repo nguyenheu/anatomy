@@ -18,6 +18,7 @@ struct TotalScore: View {
                 Circles()
                 VStack(spacing: 20) {
                     HeaderView(buttonAction: .home)
+                                .environmentObject(anatomyManager)
                     
                     Spacer()
                     

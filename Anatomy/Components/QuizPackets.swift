@@ -8,56 +8,43 @@
 import SwiftUI
 
 struct QuizPackets: View {
-    private let adaptiveColumns = [GridItem(.adaptive(minimum: .screenWidth / 2 - 10), spacing: 10)]
-    @State private var showAllQuestions = false
-        
-    let regularQuestionCounts = Array(stride(from: 10, through: 100, by: 10)) // Normal question
-    let additionalQuestions = [200] // Bonus question
-    
-    var allQuestionCounts: [Int] {
-        if showAllQuestions {
-            return regularQuestionCounts + additionalQuestions
-        } else {
-            return regularQuestionCounts
-        }
-    }
+
+    let regularQuestionCounts = Array(stride(from: 10, through: 50, by: 10))
+
     @EnvironmentObject var anatomyManager: AnatomyManager
     var body: some View {
-        ScrollView {
-            LazyVGrid(columns: adaptiveColumns, spacing: 20) {
-                ForEach(10...100, id: \.self) { number in
+        NavigationLink {
+            if !anatomyManager.reachEnd {
+                Quiz()
+                    .environmentObject(anatomyManager)
+            } else {
+                TotalScore(anatomyManager: anatomyManager)
+            }
+        } label: {
+            VStack(alignment: .center, spacing: 20) {
+                ForEach(regularQuestionCounts, id: \.self) { number in
                     if number % 10 == 0 {
-                        Text("\(number) questions")
-                            .font(.fontRoboto(.bold, fontSize: 20))
-                            .frame(width: .screenWidth/2 - 16)
-                            .padding(.vertical)
-                            .foregroundColor(.white)
-                            .background(Color.leaf)
-                            .cornerRadius(10)
-                            .shadow(color: Color.gray, radius: 5, x: 0, y: 5)
+                        CustomTextQuestionModifier(number: number)
                     }
                 }
             }
-            .padding(.bottom)
-            NavigationLink {
-                if !anatomyManager.reachEnd {
-                    Quiz()
-                        .environmentObject(anatomyManager)
-                } else {
-                    TotalScore(anatomyManager: anatomyManager)
-                }
-                
-            } label: {
-                Text("\(200) questions")
-                    .font(.fontRoboto(.bold, fontSize: 20))
-                    .frame(width: .screenWidth - 100)
-                    .padding(.vertical)
-                    .foregroundColor(.white)
-                    .background(Color.leaf)
-                    .cornerRadius(10)
-                    .shadow(color: Color.gray, radius: 5, x: 0, y: 5)
-            }
         }
+        
+    }
+}
+
+struct CustomTextQuestionModifier: View {
+    let number: Int
+        
+    var body: some View {
+        Text("\(number) questions")
+            .font(.fontRoboto(.bold, fontSize: 20))
+            .frame(width: .screenWidth - 100)
+            .padding(.vertical)
+            .foregroundColor(.white)
+            .background(Color.leaf)
+            .cornerRadius(10)
+            .shadow(color: Color.gray, radius: 5, x: 0, y: 5)
     }
 }
 

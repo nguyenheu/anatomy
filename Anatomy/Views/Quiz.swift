@@ -25,13 +25,19 @@ struct Quiz: View {
                     .frame(maxWidth: .infinity, alignment: .center)
                     .background(Color.white)
 
-                VStack(spacing: 12) {
-                    ForEach(anatomyManager.answerChoices, id: \.id) { answer in
-                        AnswerRow(answer: answer)
-                            .environmentObject(anatomyManager)
+                if !anatomyManager.triviaQuestions.isEmpty {
+                    VStack(spacing: 12) {
+                        ForEach(anatomyManager.answerChoices, id: \.id) { answer in
+                            AnswerRow(answer: answer)
+                                .environmentObject(anatomyManager)
+                        }
                     }
+                    .padding(.horizontal)
+                } else {
+                    Text("loading...")
+                    Spacer()
                 }
-                .padding(.horizontal)
+                
                 
                 Button {
                     anatomyManager.goToNextQuestion()

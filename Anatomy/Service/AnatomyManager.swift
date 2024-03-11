@@ -5,7 +5,6 @@
 //  Created by Nguyễn Quốc Hiếu on 10/12/2023.
 //
 
-//import SwiftUI
 import Foundation
 class AnatomyManager: ObservableObject {
     private(set) var triviaQuestions: [AnatomySet.Result] = []
@@ -17,7 +16,7 @@ class AnatomyManager: ObservableObject {
     @Published private(set) var answerChoices: [Answer] = []
     @Published private(set) var score = 0
     init() {
-        Task.init {
+        Task {
             await fetchTriviaQuestions()
         }
     }

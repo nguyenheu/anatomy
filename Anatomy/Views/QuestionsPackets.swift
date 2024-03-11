@@ -9,7 +9,7 @@ import SwiftUI
 
 struct QuestionsPackets: View {
     @Environment(\.presentationMode) var presentationMode
-    @EnvironmentObject var anatomyManager: AnatomyManager
+    @StateObject var anatomyManager = AnatomyManager()
     var body: some View {
         ZStack(alignment: .top) {
             Color.bg.opacity(0.6).edgesIgnoringSafeArea(.all)
@@ -18,6 +18,7 @@ struct QuestionsPackets: View {
             
             VStack {
                 HeaderView(buttonAction: .back)
+                            .environmentObject(anatomyManager)
                     .padding(.bottom, 60)
                 
                 QuizPackets()

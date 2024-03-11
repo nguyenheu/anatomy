@@ -61,28 +61,24 @@ struct HeaderView: View {
                 )
         }.padding(.horizontal)
     }
-    
     private func performAction() {
-            switch buttonAction {
-            case .back:
-                self.presentationMode.wrappedValue.dismiss()
-//                Task.init {
-//                    await triviaManager.fetchTriviaQuestions()
-//                }
-            case .home:
-                self.presentationMode.wrappedValue.dismiss()
-                print("hello")
+        switch buttonAction {
+        case .back:
+            self.presentationMode.wrappedValue.dismiss()
+        case .home:
+            Task {
+                await anatomyManager.fetchTriviaQuestions()
             }
         }
-
-        private func getImage() -> Image {
-            switch buttonAction {
-            case .back:
-                return Image.back
-            case .home:
-                return Image.house
-            }
+    }
+    private func getImage() -> Image {
+        switch buttonAction {
+        case .back:
+            return Image.back
+        case .home:
+            return Image.house
         }
+    }
 }
 
 struct Back_Share_Previews: PreviewProvider {
