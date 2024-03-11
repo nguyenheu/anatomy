@@ -11,7 +11,7 @@ import SwiftUI
 struct AnatomyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            StartGame()
         }
     }
 }

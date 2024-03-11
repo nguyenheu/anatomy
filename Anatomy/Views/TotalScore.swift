@@ -40,11 +40,11 @@ struct TotalScore: View {
                             .cornerRadius(12)
                             .foregroundColor(Color.white)
                             .shadow(color: Color.gray, radius: 5, x: 0, y: 5)
-                            .onTapGesture {
-                                Task.init {
-                                    await anatomyManager.fetchTriviaQuestions()
-                                }
-                            }
+//                            .onTapGesture {
+//                                Task.init {
+//                                    await anatomyManager.fetchTriviaQuestions()
+//                                }
+//                            }
                         
                         NavigationLink {
                             Explaination()

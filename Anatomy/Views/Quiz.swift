@@ -17,15 +17,17 @@ struct Quiz: View {
             
             VStack(spacing: 32) {
                 HeaderView(buttonAction: .home)
+                            .environmentObject(anatomyManager)
                 
-                Text(anatomyManager.question)
-                    .font(.fontRoboto(.bold, fontSize: 18))
-                    .padding(20)
-                    .foregroundColor(Color.terra)
-                    .frame(maxWidth: .infinity, alignment: .center)
-                    .background(Color.white)
-
                 if !anatomyManager.triviaQuestions.isEmpty {
+                    Text(anatomyManager.question)
+                        .font(.fontRoboto(.bold, fontSize: 18))
+                        .padding(20)
+                        .foregroundColor(Color.terra)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .background(Color.white)
+
+                    
                     VStack(spacing: 12) {
                         ForEach(anatomyManager.answerChoices, id: \.id) { answer in
                             AnswerRow(answer: answer)
@@ -33,26 +35,27 @@ struct Quiz: View {
                         }
                     }
                     .padding(.horizontal)
+                    
+                    
+                    Button {
+                        anatomyManager.goToNextQuestion()
+                    } label: {
+                        Text("Next")
+                            .font(.fontRoboto(.bold, fontSize: 18))
+                            .foregroundColor(Color.white)
+                            .padding()
+                            .padding(.horizontal, 32)
+                            .background(anatomyManager.answerSelected ? Color.terra : Color.coral)
+                            .cornerRadius(10)
+                    }
+                    .disabled(!anatomyManager.answerSelected)
+
+                    Spacer()
                 } else {
                     Text("loading...")
                     Spacer()
                 }
                 
-                
-                Button {
-                    anatomyManager.goToNextQuestion()
-                } label: {
-                    Text("Next")
-                        .font(.fontRoboto(.bold, fontSize: 18))
-                        .foregroundColor(Color.white)
-                        .padding()
-                        .padding(.horizontal, 32)
-                        .background(anatomyManager.answerSelected ? Color.terra : Color.coral)
-                        .cornerRadius(10)
-                }
-                .disabled(!anatomyManager.answerSelected)
-
-                Spacer()
             }
 
         }

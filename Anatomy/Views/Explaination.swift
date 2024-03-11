@@ -16,7 +16,8 @@ struct Explaination: View {
             Circles()
             
             VStack(spacing: 40) {
-                HeaderView(buttonAction: .back)
+                HeaderView(buttonAction: .home)
+                            .environmentObject(anatomyManager)
                     
                 ScrollView(.vertical) {
                     if !anatomyManager.triviaQuestions.isEmpty {

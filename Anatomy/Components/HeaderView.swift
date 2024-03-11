@@ -66,9 +66,7 @@ struct HeaderView: View {
         case .back:
             self.presentationMode.wrappedValue.dismiss()
         case .home:
-            Task {
-                await anatomyManager.fetchTriviaQuestions()
-            }
+            self.presentationMode.wrappedValue.dismiss()
         }
     }
     private func getImage() -> Image {

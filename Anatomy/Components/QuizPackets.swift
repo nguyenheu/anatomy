@@ -8,34 +8,52 @@
 import SwiftUI
 
 struct QuizPackets: View {
-
     let regularQuestionCounts = Array(stride(from: 10, through: 50, by: 10))
-
+    
     @EnvironmentObject var anatomyManager: AnatomyManager
     var body: some View {
-        NavigationLink {
-            if !anatomyManager.reachEnd {
-                Quiz()
-                    .environmentObject(anatomyManager)
-            } else {
-                TotalScore(anatomyManager: anatomyManager)
-            }
-        } label: {
-            VStack(alignment: .center, spacing: 20) {
-                ForEach(regularQuestionCounts, id: \.self) { number in
-                    if number % 10 == 0 {
-                        CustomTextQuestionModifier(number: number)
+//        NavigationLink {
+//            if !anatomyManager.reachEnd {
+//                Quiz()
+//                    .environmentObject(anatomyManager)
+//            } else {
+//                TotalScore(anatomyManager: anatomyManager)
+//            }
+//        } label: {
+//            VStack(alignment: .center, spacing: 20) {
+//                ForEach(regularQuestionCounts, id: \.self) { number in
+//                    CustomTextQuestionModifier(number: number)
+//                }
+//
+//            }
+//        }
+        VStack(alignment: .center, spacing: 20) {
+            
+            ForEach(regularQuestionCounts, id: \.self) { number in
+                NavigationLink(destination: {
+                    if !anatomyManager.reachEnd {
+                        Quiz()
+                            .environmentObject(anatomyManager)
+                    } else {
+                        TotalScore(anatomyManager: anatomyManager)
                     }
+                }) {
+                    CustomTextQuestionModifier(number: number)
+                        .onTapGesture {
+                            Task {
+                                await anatomyManager.fetchTriviaQuestions(questionCount: number)
+                            }
+                        }
                 }
             }
+
         }
-        
     }
 }
 
 struct CustomTextQuestionModifier: View {
     let number: Int
-        
+    
     var body: some View {
         Text("\(number) questions")
             .font(.fontRoboto(.bold, fontSize: 20))

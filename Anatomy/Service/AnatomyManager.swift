@@ -17,15 +17,15 @@ class AnatomyManager: ObservableObject {
     @Published private(set) var score = 0
     init() {
         Task {
-            await fetchTriviaQuestions()
+            await fetchTriviaQuestions(questionCount: 10)
         }
     }
     
-    func fetchTriviaQuestions() async {
-        guard let url = URL(string: "https://opentdb.com/api.php?amount=10") else {
+    func fetchTriviaQuestions(questionCount: Int) async {
+        guard let url = URL(string: "https://opentdb.com/api.php?amount=\(questionCount)") else {
             fatalError("Missing URL")
         }
-        
+            
         let urlRequest = URLRequest(url: url)
         do {
             let (data, response) = try await URLSession.shared.data(for: urlRequest)
@@ -75,6 +75,4 @@ class AnatomyManager: ObservableObject {
             score += 1
         }
     }
-
 }
-
