@@ -8,6 +8,11 @@ Anatomy Quiz is a quiz app designed to test your knowledge about the human body 
 - Upon completion, the app displays the player's total score.
 - Players can review answers after completing the quiz or return to the package selection screen to continue quizzing.
 
+## Requirements
+
+- Xcode 11.0 or later
+- iOS 13.0 or later
+
 ## Installation
 
 1. Clone the repository:
