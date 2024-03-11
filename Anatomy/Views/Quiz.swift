@@ -40,7 +40,7 @@ struct Quiz: View {
                     Button {
                         anatomyManager.goToNextQuestion()
                     } label: {
-                        Text("Next abcxyz")
+                        Text("Next")
                             .font(.fontRoboto(.bold, fontSize: 18))
                             .foregroundColor(Color.white)
                             .padding()

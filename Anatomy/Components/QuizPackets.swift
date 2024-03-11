@@ -24,7 +24,6 @@ struct QuizPackets: View {
                 ForEach(regularQuestionCounts, id: \.self) { number in
                     CustomTextQuestionModifier(number: number)
                 }
-
             }
         }
     }
