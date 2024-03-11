@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var triviaManager = TriviaManager()
+    @StateObject var anatomyManager = AnatomyManager()
     var body: some View {
         StartGame()
     }

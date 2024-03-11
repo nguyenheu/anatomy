@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AnswerRow: View {
-    @EnvironmentObject var triviaManager: TriviaManager
+    @EnvironmentObject var anatomyManager: AnatomyManager
     
     var answer: Answer
 
@@ -40,10 +40,10 @@ struct AnswerRow: View {
                 .stroke(isSelected ? (answer.isCorrect ? Color.clear : Color.terra.opacity(0.5)) : Color.gray, lineWidth: 1)
         )
         .onTapGesture {
-            if !triviaManager.answerSelected {
+            if !anatomyManager.answerSelected {
                 withAnimation(.easeInOut) {
                     isSelected = true
-                    triviaManager.selectAnswer(answer: answer)
+                    anatomyManager.selectAnswer(answer: answer)
                 }
             }
         }
@@ -53,6 +53,6 @@ struct AnswerRow: View {
 struct AnswerRow_Previews: PreviewProvider {
     static var previews: some View {
         AnswerRow(answer: Answer(text: "Singles", isCorrect: false))
-            .environmentObject(TriviaManager())
+            .environmentObject(AnatomyManager())
     }
 }

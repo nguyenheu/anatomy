@@ -21,7 +21,7 @@ struct QuizPackets: View {
             return regularQuestionCounts
         }
     }
-    @EnvironmentObject var triviaManager: TriviaManager
+    @EnvironmentObject var anatomyManager: AnatomyManager
     var body: some View {
         ScrollView {
             LazyVGrid(columns: adaptiveColumns, spacing: 20) {
@@ -40,11 +40,11 @@ struct QuizPackets: View {
             }
             .padding(.bottom)
             NavigationLink {
-                if !triviaManager.reachEnd {
+                if !anatomyManager.reachEnd {
                     Quiz()
-                        .environmentObject(triviaManager)
+                        .environmentObject(anatomyManager)
                 } else {
-                    TotalScore(triviaManager: triviaManager)
+                    TotalScore(anatomyManager: anatomyManager)
                 }
                 
             } label: {
@@ -64,6 +64,6 @@ struct QuizPackets: View {
 struct QuizPackets_Previews: PreviewProvider {
     static var previews: some View {
         QuizPackets()
-            .environmentObject(TriviaManager())
+            .environmentObject(AnatomyManager())
     }
 }

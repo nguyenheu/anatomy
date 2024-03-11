@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Quiz: View {
-    @EnvironmentObject var triviaManager: TriviaManager
+    @EnvironmentObject var anatomyManager: AnatomyManager
     var body: some View {
         ZStack(alignment: .top) {
             Color.bg.opacity(0.6).edgesIgnoringSafeArea(.all)
@@ -18,7 +18,7 @@ struct Quiz: View {
             VStack(spacing: 32) {
                 HeaderView(buttonAction: .home)
                 
-                Text(triviaManager.question)
+                Text(anatomyManager.question)
                     .font(.fontRoboto(.bold, fontSize: 18))
                     .padding(20)
                     .foregroundColor(Color.terra)
@@ -26,25 +26,25 @@ struct Quiz: View {
                     .background(Color.white)
 
                 VStack(spacing: 12) {
-                    ForEach(triviaManager.answerChoices, id: \.id) { answer in
+                    ForEach(anatomyManager.answerChoices, id: \.id) { answer in
                         AnswerRow(answer: answer)
-                            .environmentObject(triviaManager)
+                            .environmentObject(anatomyManager)
                     }
                 }
                 .padding(.horizontal)
                 
                 Button {
-                    triviaManager.goToNextQuestion()
+                    anatomyManager.goToNextQuestion()
                 } label: {
                     Text("Next")
                         .font(.fontRoboto(.bold, fontSize: 18))
                         .foregroundColor(Color.white)
                         .padding()
                         .padding(.horizontal, 32)
-                        .background(triviaManager.answerSelected ? Color.terra : Color.coral)
+                        .background(anatomyManager.answerSelected ? Color.terra : Color.coral)
                         .cornerRadius(10)
                 }
-                .disabled(!triviaManager.answerSelected)
+                .disabled(!anatomyManager.answerSelected)
 
                 Spacer()
             }
@@ -57,6 +57,6 @@ struct Quiz: View {
 
 struct Quiz_Previews: PreviewProvider {
     static var previews: some View {
-        Quiz().environmentObject(TriviaManager())
+        Quiz().environmentObject(AnatomyManager())
     }
 }

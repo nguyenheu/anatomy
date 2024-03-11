@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Trivia: Decodable {
+struct AnatomySet: Decodable {
     var results: [Result]
     
     struct Result: Decodable, Identifiable {

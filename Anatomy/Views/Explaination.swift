@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Explaination: View {
-    @StateObject var triviaManager = TriviaManager()
+    @EnvironmentObject var anatomyManager: AnatomyManager
     var body: some View {
         ZStack(alignment: .top) {
             Color.bg.opacity(0.6).edgesIgnoringSafeArea(.all)
@@ -19,13 +19,13 @@ struct Explaination: View {
                 HeaderView(buttonAction: .back)
                     
                 ScrollView(.vertical) {
-                    if !triviaManager.triviaQuestions.isEmpty {
-                        ForEach(triviaManager.triviaQuestions.indices, id: \.self) { index in
+                    if !anatomyManager.triviaQuestions.isEmpty {
+                        ForEach(anatomyManager.triviaQuestions.indices, id: \.self) { index in
                             VStack(alignment: .leading) {
                                 HStack(spacing: 8) {
                                     Text("Quiz \(index + 1):")
                                     
-                                    Text(triviaManager.triviaQuestions[index].question)
+                                    Text(anatomyManager.triviaQuestions[index].question)
                                         
                                 }
                                 .font(.fontRoboto(.bold, fontSize: 18))
@@ -40,8 +40,6 @@ struct Explaination: View {
                     } else {
                         Text("Loading...")
                     }
-                    
-                    
                 }
                 
                 
@@ -56,6 +54,6 @@ struct Explaination: View {
 struct Explaination_Previews: PreviewProvider {
     static var previews: some View {
         Explaination()
-            .environmentObject(TriviaManager())
+            .environmentObject(AnatomyManager())
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TotalScore: View {
-    @ObservedObject var triviaManager = TriviaManager()
+    @ObservedObject var anatomyManager = AnatomyManager()
     
     var body: some View {
         NavigationView {
@@ -24,7 +24,7 @@ struct TotalScore: View {
                     VStack(spacing: 20) {
                         Text("Quiz Score")
 
-                        Text("\(triviaManager.score) / \(triviaManager.length)")
+                        Text("\(anatomyManager.score) / \(anatomyManager.length)")
                             .foregroundColor(Color.leaf)
                     }
                     .font(.fontRoboto(.bold, fontSize: 40))
@@ -41,13 +41,13 @@ struct TotalScore: View {
                             .shadow(color: Color.gray, radius: 5, x: 0, y: 5)
                             .onTapGesture {
                                 Task.init {
-                                    await triviaManager.fetchTriviaQuestions()
+                                    await anatomyManager.fetchTriviaQuestions()
                                 }
                             }
                         
                         NavigationLink {
                             Explaination()
-                                .environmentObject(TriviaManager())
+                                .environmentObject(AnatomyManager())
                         } label: {
                             Text("Track Quiz Report")
                                 .frame(maxWidth: .infinity, alignment: .center)
@@ -55,7 +55,7 @@ struct TotalScore: View {
                                 .background(Color.white.opacity(0.8))
                                 .cornerRadius(12)
                                 .foregroundColor(Color.leaf)
-                            .shadow(color: Color.gray, radius: 5, x: 0, y: 5)
+                                .shadow(color: Color.gray, radius: 5, x: 0, y: 5)
                         }
                     }
                     .font(.fontRoboto(.bold, fontSize: 18))
@@ -72,6 +72,6 @@ struct TotalScore: View {
 
 struct TotalScore_Previews: PreviewProvider {
     static var previews: some View {
-        TotalScore(triviaManager: TriviaManager())
+        TotalScore(anatomyManager: AnatomyManager())
     }
 }

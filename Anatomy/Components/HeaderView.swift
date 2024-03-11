@@ -14,7 +14,7 @@ enum ButtonAction {
 
 struct HeaderView: View {
     @Environment(\.presentationMode) var presentationMode
-    @EnvironmentObject var triviaManager: TriviaManager
+    @EnvironmentObject var anatomyManager: AnatomyManager
     var buttonAction: ButtonAction
     var body: some View {
         HStack(alignment: .top) {
@@ -71,11 +71,7 @@ struct HeaderView: View {
 //                }
             case .home:
                 self.presentationMode.wrappedValue.dismiss()
-                print("Hello")
-                Task.init {
-                    await triviaManager.fetchTriviaQuestions()
-                }
-                
+                print("hello")
             }
         }
 
@@ -92,7 +88,7 @@ struct HeaderView: View {
 struct Back_Share_Previews: PreviewProvider {
     static var previews: some View {
         HeaderView(buttonAction: .back)
-            .environmentObject(TriviaManager())
+            .environmentObject(AnatomyManager())
     }
 }
 

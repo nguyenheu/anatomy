@@ -7,8 +7,8 @@
 
 //import SwiftUI
 import Foundation
-class TriviaManager: ObservableObject {
-    private(set) var triviaQuestions: [Trivia.Result] = []
+class AnatomyManager: ObservableObject {
+    private(set) var triviaQuestions: [AnatomySet.Result] = []
     @Published private(set) var index = 0
     @Published private(set) var length = 0
     @Published private(set) var reachEnd = false
@@ -35,7 +35,7 @@ class TriviaManager: ObservableObject {
             }
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
-            let decodeData = try decoder.decode(Trivia.self, from: data)
+            let decodeData = try decoder.decode(AnatomySet.self, from: data)
             DispatchQueue.main.async {
                 self.index = 0
                 self.length = 0

@@ -10,6 +10,7 @@
 		7B25B88D2B2CA64E00BFF542 /* TotalScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B25B88C2B2CA64E00BFF542 /* TotalScore.swift */; };
 		7B26E3AE2B254261001620AD /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B26E3AD2B254261001620AD /* HeaderView.swift */; };
 		7B26E3B02B254335001620AD /* QuizPackets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B26E3AF2B254335001620AD /* QuizPackets.swift */; };
+		7B366AB12B9EA2E500CF6822 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B366AB02B9EA2E500CF6822 /* ContentView.swift */; };
 		7B5CC4402B2F4FE6005AB73B /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B5CC43F2B2F4FE6005AB73B /* Roboto-Regular.ttf */; };
 		7B5CC4422B2F5057005AB73B /* Explaination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5CC4412B2F5057005AB73B /* Explaination.swift */; };
 		7B5CC4442B2F5398005AB73B /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B5CC4432B2F5398005AB73B /* Roboto-Light.ttf */; };
@@ -19,15 +20,14 @@
 		7B8C119E2B25C1870021E5FD /* AnswerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8C119D2B25C1870021E5FD /* AnswerRow.swift */; };
 		7BC6D8952B24BA26001AC3B7 /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC6D8942B24BA26001AC3B7 /* TextButton.swift */; };
 		7BE1CCFF2B2499AE002703DB /* AnatomyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE1CCFE2B2499AE002703DB /* AnatomyApp.swift */; };
-		7BE1CD012B2499AE002703DB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE1CD002B2499AE002703DB /* ContentView.swift */; };
 		7BE1CD032B2499AF002703DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BE1CD022B2499AF002703DB /* Assets.xcassets */; };
 		7BE1CD062B2499AF002703DB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BE1CD052B2499AF002703DB /* Preview Assets.xcassets */; };
 		7BE1CD112B249AA6002703DB /* StartGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE1CD102B249AA6002703DB /* StartGame.swift */; };
 		7BE1CD132B249DE9002703DB /* CustomRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE1CD122B249DE9002703DB /* CustomRectangle.swift */; };
 		7BE1CD162B249F62002703DB /* CabinSketch-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BE1CD152B249F62002703DB /* CabinSketch-Bold.ttf */; };
 		7BE1CD182B249F73002703DB /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BE1CD172B249F73002703DB /* Roboto-Bold.ttf */; };
-		7BE4606B2B25F6AC00EC24D7 /* Trivia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE4606A2B25F6AC00EC24D7 /* Trivia.swift */; };
-		7BE4606D2B26063700EC24D7 /* TriviaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE4606C2B26063700EC24D7 /* TriviaManager.swift */; };
+		7BE4606B2B25F6AC00EC24D7 /* AnatomySet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE4606A2B25F6AC00EC24D7 /* AnatomySet.swift */; };
+		7BE4606D2B26063700EC24D7 /* AnatomyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE4606C2B26063700EC24D7 /* AnatomyManager.swift */; };
 		7BE757FE2B24C3D5003D311F /* QuestionsPackets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE757FD2B24C3D5003D311F /* QuestionsPackets.swift */; };
 		7BEE94B82B29FBCC0028C45D /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEE94B72B29FBCC0028C45D /* UIExtensions.swift */; };
 /* End PBXBuildFile section */
@@ -36,6 +36,7 @@
 		7B25B88C2B2CA64E00BFF542 /* TotalScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalScore.swift; sourceTree = "<group>"; };
 		7B26E3AD2B254261001620AD /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		7B26E3AF2B254335001620AD /* QuizPackets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPackets.swift; sourceTree = "<group>"; };
+		7B366AB02B9EA2E500CF6822 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7B5CC43F2B2F4FE6005AB73B /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		7B5CC4412B2F5057005AB73B /* Explaination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Explaination.swift; sourceTree = "<group>"; };
 		7B5CC4432B2F5398005AB73B /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
@@ -46,7 +47,6 @@
 		7BC6D8942B24BA26001AC3B7 /* TextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
 		7BE1CCFB2B2499AE002703DB /* Anatomy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Anatomy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BE1CCFE2B2499AE002703DB /* AnatomyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnatomyApp.swift; sourceTree = "<group>"; };
-		7BE1CD002B2499AE002703DB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7BE1CD022B2499AF002703DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7BE1CD052B2499AF002703DB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7BE1CD102B249AA6002703DB /* StartGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGame.swift; sourceTree = "<group>"; };
@@ -54,8 +54,8 @@
 		7BE1CD152B249F62002703DB /* CabinSketch-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CabinSketch-Bold.ttf"; sourceTree = "<group>"; };
 		7BE1CD172B249F73002703DB /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		7BE1CD192B249FCE002703DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		7BE4606A2B25F6AC00EC24D7 /* Trivia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trivia.swift; sourceTree = "<group>"; };
-		7BE4606C2B26063700EC24D7 /* TriviaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaManager.swift; sourceTree = "<group>"; };
+		7BE4606A2B25F6AC00EC24D7 /* AnatomySet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnatomySet.swift; sourceTree = "<group>"; };
+		7BE4606C2B26063700EC24D7 /* AnatomyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnatomyManager.swift; sourceTree = "<group>"; };
 		7BE757FD2B24C3D5003D311F /* QuestionsPackets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsPackets.swift; sourceTree = "<group>"; };
 		7BEE94B72B29FBCC0028C45D /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,7 +104,7 @@
 			children = (
 				7BE1CD192B249FCE002703DB /* Info.plist */,
 				7BE1CCFE2B2499AE002703DB /* AnatomyApp.swift */,
-				7BE1CD002B2499AE002703DB /* ContentView.swift */,
+				7B366AB02B9EA2E500CF6822 /* ContentView.swift */,
 				7BE1CD0D2B249A1C002703DB /* Views */,
 				7B26E3AC2B254152001620AD /* Components */,
 				7BE1CD0F2B249A43002703DB /* Utils */,
@@ -128,7 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				7B8C119B2B25C1120021E5FD /* Answer.swift */,
-				7BE4606A2B25F6AC00EC24D7 /* Trivia.swift */,
+				7BE4606A2B25F6AC00EC24D7 /* AnatomySet.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -148,7 +148,7 @@
 		7BE1CD0E2B249A38002703DB /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				7BE4606C2B26063700EC24D7 /* TriviaManager.swift */,
+				7BE4606C2B26063700EC24D7 /* AnatomyManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -250,14 +250,14 @@
 			files = (
 				7B26E3B02B254335001620AD /* QuizPackets.swift in Sources */,
 				7BE1CD132B249DE9002703DB /* CustomRectangle.swift in Sources */,
-				7BE1CD012B2499AE002703DB /* ContentView.swift in Sources */,
 				7BC6D8952B24BA26001AC3B7 /* TextButton.swift in Sources */,
 				7B8C119E2B25C1870021E5FD /* AnswerRow.swift in Sources */,
 				7B26E3AE2B254261001620AD /* HeaderView.swift in Sources */,
 				7B5CC4422B2F5057005AB73B /* Explaination.swift in Sources */,
 				7BE757FE2B24C3D5003D311F /* QuestionsPackets.swift in Sources */,
-				7BE4606B2B25F6AC00EC24D7 /* Trivia.swift in Sources */,
-				7BE4606D2B26063700EC24D7 /* TriviaManager.swift in Sources */,
+				7B366AB12B9EA2E500CF6822 /* ContentView.swift in Sources */,
+				7BE4606B2B25F6AC00EC24D7 /* AnatomySet.swift in Sources */,
+				7BE4606D2B26063700EC24D7 /* AnatomyManager.swift in Sources */,
 				7BE1CD112B249AA6002703DB /* StartGame.swift in Sources */,
 				7B8C119C2B25C1120021E5FD /* Answer.swift in Sources */,
 				7B8C11982B25BE470021E5FD /* Quiz.swift in Sources */,

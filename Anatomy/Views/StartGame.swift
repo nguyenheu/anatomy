@@ -9,7 +9,7 @@ import SwiftUI
 
 struct StartGame: View {
     private var text: String = "Anatomy And Physiology Exam"
-    @StateObject var triviaManager = TriviaManager()
+    @StateObject var anatomyManager = AnatomyManager()
     var body: some View {
         NavigationView {
             ZStack {
@@ -35,7 +35,7 @@ struct StartGame: View {
 
                 NavigationLink {
                     QuestionsPackets()
-                        .environmentObject(triviaManager)
+                        .environmentObject(anatomyManager)
                 } label: {
                     TextButton(text: "Start", background: Color.bg, widthButton: .screenWidth/5)
                 }
