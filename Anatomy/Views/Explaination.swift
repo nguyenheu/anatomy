@@ -39,7 +39,7 @@ struct Explaination: View {
                             .padding(.bottom)
                         }
                     } else {
-                        Text("Loading...")
+                        ProgressView()
                     }
                 }
                 

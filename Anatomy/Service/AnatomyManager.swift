@@ -29,21 +29,25 @@ class AnatomyManager: ObservableObject {
         let urlRequest = URLRequest(url: url)
         do {
             let (data, response) = try await URLSession.shared.data(for: urlRequest)
-            guard (response as? HTTPURLResponse)?.statusCode == 200 else {
-                fatalError("Error while fetching data")
+            guard let httpResponse = response as? HTTPURLResponse else {
+                fatalError("Unexpected response type")
             }
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            let decodeData = try decoder.decode(AnatomySet.self, from: data)
-            DispatchQueue.main.async {
-                self.index = 0
-                self.length = 0
-                self.reachEnd = false
-                
-                self.triviaQuestions = decodeData.results
-                self.length = self.triviaQuestions.count
-                self.setQuestion()
+            if httpResponse.statusCode == 200 {
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let decodeData = try decoder.decode(AnatomySet.self, from: data)
+                DispatchQueue.main.async {
+                    self.index = 0
+                    self.length = 0
+                    self.reachEnd = false
+
+                    self.triviaQuestions = decodeData.results
+                    self.length = self.triviaQuestions.count
+                    self.setQuestion()
+                }
+                print("### sucess")
             }
+            
         } catch {
             print("Error fetching trivia: \(error)")
         }

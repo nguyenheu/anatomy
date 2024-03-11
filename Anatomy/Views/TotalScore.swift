@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TotalScore: View {
     @ObservedObject var anatomyManager = AnatomyManager()
-    
+//    @Environment(\.presentationMode) var presentationMode
     var body: some View {
         NavigationView {
             ZStack {
@@ -40,11 +40,9 @@ struct TotalScore: View {
                             .cornerRadius(12)
                             .foregroundColor(Color.white)
                             .shadow(color: Color.gray, radius: 5, x: 0, y: 5)
-//                            .onTapGesture {
-//                                Task.init {
-//                                    await anatomyManager.fetchTriviaQuestions()
-//                                }
-//                            }
+                            .onTapGesture {
+                                
+                            }
                         
                         NavigationLink {
                             Explaination()

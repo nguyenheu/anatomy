@@ -52,8 +52,7 @@ struct Quiz: View {
 
                     Spacer()
                 } else {
-                    Text("loading...")
-                    Spacer()
+                    ProgressView()
                 }
                 
             }
