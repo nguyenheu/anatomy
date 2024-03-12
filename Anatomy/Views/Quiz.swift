@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Quiz: View {
     @EnvironmentObject var anatomyManager: AnatomyManager
+    @State private var currentQuestion: String = ""
     var body: some View {
         ZStack(alignment: .top) {
             Color.bg.opacity(0.6).edgesIgnoringSafeArea(.all)
@@ -18,7 +19,6 @@ struct Quiz: View {
             VStack(spacing: 32) {
                 HeaderView(buttonAction: .home)
                             .environmentObject(anatomyManager)
-                
                 if !anatomyManager.triviaQuestions.isEmpty {
                     Text(anatomyManager.question)
                         .font(.fontRoboto(.bold, fontSize: 18))
@@ -54,7 +54,6 @@ struct Quiz: View {
                 } else {
                     ProgressView()
                 }
-                
             }
 
         }

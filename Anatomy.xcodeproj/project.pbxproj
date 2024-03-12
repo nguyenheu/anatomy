@@ -11,7 +11,6 @@
 		7B26E3AE2B254261001620AD /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B26E3AD2B254261001620AD /* HeaderView.swift */; };
 		7B26E3B02B254335001620AD /* QuizPackets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B26E3AF2B254335001620AD /* QuizPackets.swift */; };
 		7B5CC4402B2F4FE6005AB73B /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B5CC43F2B2F4FE6005AB73B /* Roboto-Regular.ttf */; };
-		7B5CC4422B2F5057005AB73B /* Explaination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5CC4412B2F5057005AB73B /* Explaination.swift */; };
 		7B5CC4442B2F5398005AB73B /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B5CC4432B2F5398005AB73B /* Roboto-Light.ttf */; };
 		7B8C11982B25BE470021E5FD /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8C11972B25BE470021E5FD /* Quiz.swift */; };
 		7B8C119A2B25BFEA0021E5FD /* Circles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8C11992B25BFEA0021E5FD /* Circles.swift */; };
@@ -36,7 +35,6 @@
 		7B26E3AD2B254261001620AD /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		7B26E3AF2B254335001620AD /* QuizPackets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPackets.swift; sourceTree = "<group>"; };
 		7B5CC43F2B2F4FE6005AB73B /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
-		7B5CC4412B2F5057005AB73B /* Explaination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Explaination.swift; sourceTree = "<group>"; };
 		7B5CC4432B2F5398005AB73B /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		7B8C11972B25BE470021E5FD /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		7B8C11992B25BFEA0021E5FD /* Circles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circles.swift; sourceTree = "<group>"; };
@@ -137,7 +135,6 @@
 				7BE757FD2B24C3D5003D311F /* QuestionsPackets.swift */,
 				7B8C11972B25BE470021E5FD /* Quiz.swift */,
 				7B25B88C2B2CA64E00BFF542 /* TotalScore.swift */,
-				7B5CC4412B2F5057005AB73B /* Explaination.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -250,7 +247,6 @@
 				7BC6D8952B24BA26001AC3B7 /* TextButton.swift in Sources */,
 				7B8C119E2B25C1870021E5FD /* AnswerRow.swift in Sources */,
 				7B26E3AE2B254261001620AD /* HeaderView.swift in Sources */,
-				7B5CC4422B2F5057005AB73B /* Explaination.swift in Sources */,
 				7BE757FE2B24C3D5003D311F /* QuestionsPackets.swift in Sources */,
 				7BE4606B2B25F6AC00EC24D7 /* AnatomySet.swift in Sources */,
 				7BE4606D2B26063700EC24D7 /* AnatomyManager.swift in Sources */,

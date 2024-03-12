@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct AnatomyApp: App {
+    @StateObject var anatomyManager = AnatomyManager()
     var body: some Scene {
         WindowGroup {
-            StartGame()
+            NavigationView {
+                StartGame()
+            }
+            .navigationViewStyle(StackNavigationViewStyle())
+            .environmentObject(anatomyManager)
         }
     }
 }

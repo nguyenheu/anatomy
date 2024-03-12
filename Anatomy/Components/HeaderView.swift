@@ -66,6 +66,9 @@ struct HeaderView: View {
         case .back:
             self.presentationMode.wrappedValue.dismiss()
         case .home:
+            Task.init {
+                await anatomyManager.fetchTriviaQuestions(length: 10)
+            }
             self.presentationMode.wrappedValue.dismiss()
         }
     }

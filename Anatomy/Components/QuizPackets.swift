@@ -9,19 +9,18 @@ import SwiftUI
 
 struct QuizPackets: View {
     let regularQuestionCounts = Array(stride(from: 10, through: 50, by: 10))
-    
     @EnvironmentObject var anatomyManager: AnatomyManager
+    
     var body: some View {
-        NavigationLink {
-            if !anatomyManager.reachEnd {
-                Quiz()
-                    .environmentObject(anatomyManager)
-            } else {
-                TotalScore(anatomyManager: anatomyManager)
-            }
-        } label: {
-            VStack(alignment: .center, spacing: 20) {
-                ForEach(regularQuestionCounts, id: \.self) { number in
+        VStack(alignment: .center, spacing: 20) {
+            ForEach(regularQuestionCounts, id: \.self) { number in
+                NavigationLink {
+                    if !anatomyManager.reachEnd {
+                        Quiz().environmentObject(anatomyManager)
+                    } else {
+                        TotalScore(anatomyManager: anatomyManager)
+                    }
+                } label: {
                     CustomTextQuestionModifier(number: number)
                 }
             }
