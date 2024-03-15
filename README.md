@@ -1,6 +1,3 @@
-
-![Uploading Simulator Screen Shot - iPhone 11 - 2024-03-15 at 21.51.47.png…]()
-
 # Anatomy Quiz
 
 Anatomy Quiz is a quiz app designed to test your knowledge about the human body structure. The quiz questions are fetched from an API to ensure diversity and up-to-date content.
