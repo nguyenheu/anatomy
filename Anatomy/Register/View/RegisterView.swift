@@ -31,8 +31,9 @@ struct RegisterView: View {
                     Text("Register")
                         .font(.fontCabinSketch(.bold, fontSize: 24))
                         .foregroundColor(.black)
-                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .trailing)
-                                        
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                    Spacer()
+                    
                     Button {
                         registerViewModel.register()
                     } label: {
@@ -50,19 +51,20 @@ struct RegisterView: View {
                     }
                 }
                 .padding(.top, 30)
-                .padding(.trailing)
+                .padding(.horizontal)
                 
                 Spacer()
                 
-                NavigationLink(destination: RegisterView()) {
-                    HStack(spacing: 4) {
-                        Text("Already have an account?")
+                HStack(spacing: 4) {
+                    Text("Already have an account?")
+                    NavigationLink(destination: SignInView()) {
                         Text("Sign in here")
                             .fontWeight(.semibold)
                     }
-                    .foregroundColor(Color.sandy)
                 }
+                .foregroundColor(Color.sandy)
                 .padding(.bottom, .bottomInsets + 24)
+                
             }
             .padding(.top, 40)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -74,6 +76,9 @@ struct RegisterView: View {
                 }
             )
         }
+        .navigationTitle("")
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
     }
 }
 

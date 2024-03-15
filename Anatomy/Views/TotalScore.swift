@@ -39,13 +39,24 @@ struct TotalScore: View {
                     .cornerRadius(12)
                     .foregroundColor(Color.white)
                     .shadow(color: Color.gray, radius: 5, x: 0, y: 5)
-                    .padding()
+                    .padding(.horizontal)
                     .onTapGesture {
                         Task.init {
                             await anatomyManager.fetchTriviaQuestions(length: 10)
                         }
                         self.presentationMode.wrappedValue.dismiss()
                     }
+                NavigationLink(destination: SignOutView()) {
+                    Text("Log out")
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .font(.fontRoboto(.bold, fontSize: 18))
+                        .padding()
+                        .background(Color.sandy)
+                        .cornerRadius(12)
+                        .foregroundColor(Color.white)
+                        .shadow(color: Color.gray, radius: 5, x: 0, y: 5)
+                        .padding(.horizontal)
+                }
 
                 Spacer()
             }

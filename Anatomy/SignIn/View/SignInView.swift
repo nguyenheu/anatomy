@@ -29,8 +29,10 @@ struct SignInView: View {
                     Text("Sign In")
                         .font(.fontCabinSketch(.bold, fontSize: 24))
                         .foregroundColor(.black)
-                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .trailing)
-                                        
+                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                            
+                    Spacer()
+                    
                     Button {
                         signInViewModel.signIn()
                     } label: {
@@ -44,23 +46,25 @@ struct SignInView: View {
                                     .imageScale(.large)
                                     .foregroundColor(.white)
                             }
-                        
                     }
                 }
                 .padding(.top, 30)
-                .padding(.trailing)
+                .padding(.horizontal)
                 
                 Spacer()
                 
-                NavigationLink(destination: RegisterView()) {
-                    HStack(spacing: 4) {
-                        Text("Don't have an account?")
+                HStack(spacing: 4) {
+                    Text("Don't have an account?")
+                    NavigationLink(destination: RegisterView()) {
                         Text("Register here")
                             .fontWeight(.semibold)
                     }
-                    .foregroundColor(Color.sandy)
+                    
                 }
+                .foregroundColor(Color.sandy)
                 .padding(.bottom, .bottomInsets + 24)
+                
+                
             }
             .padding(.top, 40)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -72,6 +76,9 @@ struct SignInView: View {
                 }
             )
         }
+        .navigationTitle("")
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
     }
 }
 

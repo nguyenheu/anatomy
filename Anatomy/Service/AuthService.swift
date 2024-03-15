@@ -38,4 +38,13 @@ class AuthService {
     }
     
     //sigout
+    func signOut() {
+        do {
+            try Auth.auth().signOut()
+            self.userSession = nil
+        } catch {
+            print("DEBUG: Could not sign in the user: \(error.localizedDescription)")
+        }
+        
+    }
 }

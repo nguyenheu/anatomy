@@ -16,15 +16,16 @@ struct SignOutView: View {
             Circles()
             
             VStack {
-                Text("Sign Out")
+                Text("Would you want to continue logging out?")
                     .font(.fontRoboto(.bold, fontSize: 36))
-                    .foregroundColor(.coral)
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.sandy)
                     .offset(y: animate ? 0 : 400)
                     .scaleEffect(animate ? 1 : 0.4)
                     .opacity(animate ? 1 : 0.1)
                 
                 Button {
-                    
+                    AuthService.shared.signOut()
                 } label: {
                     Label {
                         Text("Sign out")
@@ -36,7 +37,7 @@ struct SignOutView: View {
                     .foregroundColor(.white)
                     .frame(width: .screenWidth/2, height: 60, alignment: .center)
                     .background(Color.coral, in: RoundedRectangle(cornerRadius: 12))
-                    .shadow(color: Color.coral, radius: 8, x: 0, y: 8)
+                    .shadow(color: Color.sandy, radius: 8, x: 0, y: 8)
                     .shadow(color: .white.opacity(0.7), radius: 1, x: 0, y: 1)
                     .offset(y: animate ? 0 : 400)
                     .scaleEffect(animate ? 1 : 0.4)
@@ -49,6 +50,9 @@ struct SignOutView: View {
                 animate = true
             }
         }
+        .navigationTitle("")
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
     }
 }
 

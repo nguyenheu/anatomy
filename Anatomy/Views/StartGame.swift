@@ -34,8 +34,8 @@ struct StartGame: View {
                     .offset(x: 0, y: -(.screenWidth/2))
 
                 NavigationLink {
-                    QuestionsPackets()
-                        .environmentObject(anatomyManager)
+                    QuestionsPackets().environmentObject(anatomyManager)
+
                 } label: {
                     TextButton(text: "Start", background: Color.bg, widthButton: .screenWidth/5)
                 }

@@ -17,7 +17,7 @@ class AnatomyManager: ObservableObject {
     @Published private(set) var score = 0
     init() {
         Task {
-            await fetchTriviaQuestions(length: 3)
+            await fetchTriviaQuestions(length: 10)
         }
     }
     

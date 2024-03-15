@@ -22,14 +22,12 @@ struct AnatomyApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
-    @StateObject var anatomyManager = AnatomyManager()
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                StartGame()
+                ContentView()
             }
             .navigationViewStyle(StackNavigationViewStyle())
-            .environmentObject(anatomyManager)
         }
     }
 }
