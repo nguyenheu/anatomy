@@ -28,10 +28,58 @@ extension CGFloat {
     static var screenWidth: Double {
         return UIScreen.main.bounds.size.width
     }
+    
     static var screenHeight: Double {
         return UIScreen.main.bounds.size.height
     }
+    
+    static var topInsets: Double {
+        guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
+          return 0.0
+        }
 
+          guard let window = scene.windows.filter({ $0.isKeyWindow }).first else {
+          return 0.0
+        }
+
+        return window.safeAreaInsets.top
+    }
+
+    static var bottomInsets: Double {
+      guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
+        return 0.0
+      }
+
+        guard let window = scene.windows.filter({ $0.isKeyWindow }).first else {
+        return 0.0
+      }
+
+      return window.safeAreaInsets.bottom
+    }
+
+    static var horizontalInsets: Double {
+      guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
+        return 0.0
+      }
+
+      guard let window = scene.windows.filter({ $0.isKeyWindow }).first else {
+        return 0.0
+      }
+
+      return window.safeAreaInsets.left + window.safeAreaInsets.right
+    }
+
+    static var verticalInsets: Double {
+        guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
+          return 0.0
+        }
+
+        guard let window = scene.windows.filter({ $0.isKeyWindow }).first else {
+          return 0.0
+        }
+
+        return window.safeAreaInsets.top + window.safeAreaInsets.bottom
+    }
 }
 
 extension Color {
@@ -51,6 +99,4 @@ extension Image {
     static let share    = Image("share")
     static let tick     = Image("tick")
     static let xmark    = Image("xmark")
-    
-    //image from system
 }
